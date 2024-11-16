@@ -1,0 +1,30 @@
+###
+GET http://localhost:3000/post
+
+###
+GET http://localhost:3000/post?sender=arbel
+
+###
+GET http://localhost:3000/post/4
+
+###
+PUT http://localhost:3000/post/2
+Content-Type: application/json
+
+{
+    "_id": 2,
+    "title": "miau",
+    "sender": "michal",
+    "content": "miau gam lach"
+}
+
+###
+POST http://localhost:3000/post
+Content-Type: application/json
+
+{
+    "_id": 2,
+    "title": "Hello",
+    "sender": "michal",
+    "content": "Hello"
+}
