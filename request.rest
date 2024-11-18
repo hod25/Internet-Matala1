@@ -28,3 +28,30 @@ Content-Type: application/json
     "sender": "michal",
     "content": "Hello"
 }
+
+
+# 
+# 
+###
+GET http://localhost:3000/comment/123
+
+###
+POST http://localhost:3000/comment/123
+Content-Type: application/json
+
+{
+    "content": "Great post!",
+    "sender": "arbel"
+}
+
+###
+PUT http://localhost:3000/comment/456
+Content-Type: application/json
+
+{
+    "content": "Updated comment content",
+    "sender": "arbel"
+}
+
+###
+DELETE http://localhost:3000/comment/789
