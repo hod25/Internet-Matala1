@@ -45,22 +45,24 @@ POST http://localhost:3000/comment
 Content-Type: application/json
 
 {
-    "_id": 3,
+    "_id": 23,
+    "id": 1,
     "title": "Hello",
     "content": "Great post!",
     "sender": "Hod"
 }
 
 ###
-PUT http://localhost:3000/comment/2
+PUT http://localhost:3000/comment/23
 Content-Type: application/json
 
 {
-    "_id": 2,
+    "_id": 23,
+    "id": 1,
     "title": "Updated",
     "content": "Post upadted",
     "sender": "Hod"
 }
 
 ###
-DELETE http://localhost:3000/comment/2
+DELETE http://localhost:3000/comment/1

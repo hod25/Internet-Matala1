@@ -47,12 +47,12 @@ const updateComment = async (req, res) => {
   }
 };
 
-
 const deleteComment = async (req, res) => {
-  const commentId = req.params._id; // מזהה התגובה מהפרמטרים ב-URL
+  const commentId = req.params.id; // מזהה התגובה מהפרמטרים ב-URL
 
   try {
-    const deletedComment = await Comment.findByIdAndDelete(commentId); // מחיקת התגובה לפי מזהה
+    // מחיקת התגובה לפי השדה id במקום _id
+    const deletedComment = await Comment.findOneAndDelete({ id: commentId });
     if (!deletedComment) {
       return res.status(404).json({ message: "Comment not found" }); // אם התגובה לא נמצאה
     }

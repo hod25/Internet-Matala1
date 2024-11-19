@@ -26,7 +26,11 @@ router.put("/:_id", (req, res) => {
   controller.updateComment(req, res);
 });
   
-router.delete("/:_id", (req, res) => {
+// router.delete("/:_id", (req, res) => {
+//   controller.deleteComment(req, res);
+// });
+
+router.delete("/:id", (req, res) => {
   controller.deleteComment(req, res);
 });
 
