@@ -1,31 +1,33 @@
 // routes/commentRoutes.js
 const express = require("express");
 const router = express.Router();
-const commentController = require("../controllers/comment");
+const controller = require("../controllers/comments");
 
-// יצירת תגובה חדשה
+// קבלת פוסטים לפי שולח או את כל הפוסטים אם אין פרמטרים
+router.get('/', (req, res) => {
+  if (req.query.sender) {
+      // אם יש פרמטר sender בשאילתא, קבל פוסטים לפי שולח
+      controller.getCommentById(req, res);
+  } else {
+      // אם אין פרמטרים בשאילתא, קבל את כל הפוסטים
+      controller.getAllComments(req, res);
+  }
+});
+
+router.get("/:_id", (req, res) => {
+  controller.getCommentById(req, res);
+});
+  
 router.post("/", (req, res) => {
-  commentController.createComment(req, res);
+  controller.createComment(req, res);
 });
 
-// קבלת כל התגובות או לפי ID של פוסט
-router.get("/", (req, res) => {
-  commentController.getAllComments(req, res);
+router.put("/:_id", (req, res) => {
+  controller.updateComment(req, res);
 });
-
-// קבלת תגובה לפי ID
-router.get("/:id", (req, res) => {
-  commentController.getCommentById(req, res);
-});
-
-// עדכון תגובה
-router.put("/:id", (req, res) => {
-  commentController.updateComment(req, res);
-});
-
-// מחיקת תגובה
-router.delete("/:id", (req, res) => {
-  commentController.deleteComment(req, res);
+  
+router.delete("/:_id", (req, res) => {
+  controller.deleteComment(req, res);
 });
 
 module.exports = router;

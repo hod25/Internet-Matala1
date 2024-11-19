@@ -30,28 +30,37 @@ Content-Type: application/json
 }
 
 
-# 
-# 
+# comment
 ###
-GET http://localhost:3000/comment/123
+GET http://localhost:3000/comment
 
 ###
-POST http://localhost:3000/comment/123
+GET http://localhost:3000/comment?sender=arbel
+
+###
+GET http://localhost:3000/comment/2
+
+###
+POST http://localhost:3000/comment
 Content-Type: application/json
 
 {
+    "_id": 2,
+    "title": "Hello",
     "content": "Great post!",
     "sender": "arbel"
 }
 
 ###
-PUT http://localhost:3000/comment/456
+PUT http://localhost:3000/comment/2
 Content-Type: application/json
 
 {
-    "content": "Updated comment content",
+    "_id": 2,
+    "title": "Hellro",
+    "content": "Great post!",
     "sender": "arbel"
 }
 
 ###
-DELETE http://localhost:3000/comment/789
+DELETE http://localhost:3000/comment/2

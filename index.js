@@ -4,8 +4,6 @@ const dotenv = require("dotenv").config();
 const port = process.env.PORT || 3000;
 const commentRoutes = require("./routes/commentRoutes");
 
-
-
 const mongoose = require("mongoose");
 mongoose.connect(process.env.DB_CONNECT);
 const db = mongoose.connection;
