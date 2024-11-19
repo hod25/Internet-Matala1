@@ -45,10 +45,10 @@ POST http://localhost:3000/comment
 Content-Type: application/json
 
 {
-    "_id": 2,
+    "_id": 3,
     "title": "Hello",
     "content": "Great post!",
-    "sender": "arbel"
+    "sender": "Hod"
 }
 
 ###
@@ -57,9 +57,9 @@ Content-Type: application/json
 
 {
     "_id": 2,
-    "title": "Hellro",
-    "content": "Great post!",
-    "sender": "arbel"
+    "title": "Updated",
+    "content": "Post upadted",
+    "sender": "Hod"
 }
 
 ###
