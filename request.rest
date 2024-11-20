@@ -45,7 +45,7 @@ POST http://localhost:3000/comment
 Content-Type: application/json
 
 {
-    "_id": 23,
+    "_id": 2,
     "id": 1,
     "title": "Hello",
     "content": "Great post!",

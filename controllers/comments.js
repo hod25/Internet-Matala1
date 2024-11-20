@@ -51,13 +51,13 @@ const deleteComment = async (req, res) => {
   const commentId = req.params.id; // מזהה התגובה מהפרמטרים ב-URL
 
   try {
-    // מחיקת התגובה לפי השדה id במקום _id
-    const deletedComment = await Comment.findOneAndDelete({ id: commentId });
-    if (!deletedComment) {
-      return res.status(404).json({ message: "Comment not found" }); // אם התגובה לא נמצאה
+    // מחיקת כל התגובות עם id זהה
+    const result = await Comment.deleteMany({ id: commentId });
+    if (result.deletedCount === 0) {
+      return res.status(404).json({ message: "No comments found with the given id" }); // אם לא נמצאו תגובות למחיקה
     }
 
-    res.json({ message: "Comment deleted successfully" }); // אישור המחיקה
+    res.json({ message: `${result.deletedCount} comment(s) deleted successfully` }); // אישור המחיקה עם מספר המחיקות
   } catch (err) {
     res.status(500).json({ message: err.message }); // טיפול בשגיאות
   }
