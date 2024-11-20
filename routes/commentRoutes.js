@@ -14,7 +14,7 @@ router.get('/', (req, res) => {
   }
 });
 
-router.get("/:_id", (req, res) => {
+router.get("/:id", (req, res) => {
   controller.getCommentById(req, res);
 });
   

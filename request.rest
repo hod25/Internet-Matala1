@@ -38,14 +38,14 @@ GET http://localhost:3000/comment
 GET http://localhost:3000/comment?sender=arbel
 
 ###
-GET http://localhost:3000/comment/2
+GET http://localhost:3000/comment?id=1
 
 ###
 POST http://localhost:3000/comment
 Content-Type: application/json
 
 {
-    "_id": 2,
+    "_id": 3,
     "id": 1,
     "title": "Hello",
     "content": "Great post!",

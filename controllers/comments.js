@@ -12,13 +12,19 @@ const createComment = async (req, res) => {
 };
 
 const getAllComments = async (req, res) => {
+  const commentId = req.query.id; // קבלת מזהה מהשאילתא (אם קיים)
+
   try {
-    const comments = await Comment.find();
+    const comments = commentId 
+      ? await Comment.find({ id: commentId }) // חיפוש תגובות עם מזהה מסוים
+      : await Comment.find(); // אם אין מזהה, קבלת כל התגובות
+
     res.json(comments);
   } catch (err) {
     res.status(500).json({ message: err.message });
   }
 };
+
 
 const getCommentById = async (req, res) => {
   try {
