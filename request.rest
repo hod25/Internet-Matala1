@@ -35,9 +35,6 @@ Content-Type: application/json
 GET http://localhost:3000/comment
 
 ###
-GET http://localhost:3000/comment?sender=arbel
-
-###
 GET http://localhost:3000/comment?id=1
 
 ###
@@ -45,19 +42,19 @@ POST http://localhost:3000/comment
 Content-Type: application/json
 
 {
-    "_id": 3,
-    "id": 1,
+    "_id": 132,
+    "id": 12,
     "title": "Hello",
     "content": "Great post!",
     "sender": "Hod"
 }
 
 ###
-PUT http://localhost:3000/comment/23
+PUT http://localhost:3000/comment/132
 Content-Type: application/json
 
 {
-    "_id": 23,
+    "_id": 132,
     "id": 1,
     "title": "Updated",
     "content": "Post upadted",
